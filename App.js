@@ -9,7 +9,8 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './store';
 
 import Loading from './src/sections/components/loading';
-import AppLayout from './src/app'
+// import AppLayout from './src/app'
+import AppNavigatorWithState from './src/app-navigator-with-state'
 
 // console.disableYellowBox = true
 class App extends Component {
@@ -26,7 +27,8 @@ class App extends Component {
           loading={<Loading/>}
           persistor={persistor}
         >
-        <AppLayout/>          
+        {/* <AppLayout/>           */}
+        <AppNavigatorWithState/>
         </PersistGate>
       </Provider>
 
