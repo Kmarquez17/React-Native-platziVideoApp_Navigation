@@ -1,10 +1,10 @@
 function videos(state = {}, action) {
   switch (action.type) {
     case 'SET_SEGGESTION_LIST': {
-      return {...state, ...action.payload}
+      return {...state, ...action.payload.suggestionList}
     }
     case 'SET_CATEGORY_LIST': {
-      return {...state, ...action.payload}
+      return {...state, ...action.payload.categoryList}
     }
     case 'SET_SELECTED_MOVIE': {
       return {...state, selectedMovie: action.payload.movie}
