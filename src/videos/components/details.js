@@ -50,7 +50,7 @@ function Details(props) {
       </View>
       <View style={styles.trailer}>
         <WebView
-          source={{html: makeHTML(props.yt_trailer_code ) }}
+          source={{ html: makeHTML(props.yt_trailer_code) }}
         />
       </View>
     </ScrollView>

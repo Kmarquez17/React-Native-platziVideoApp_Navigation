@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import {
-  Text
+  Text,
+  StatusBar
 } from 'react-native';
 import { connect } from 'react-redux';
 
@@ -12,12 +13,18 @@ import CategoryList from '../../videos/containers/category-list.js';
 import Search from '../../sections/containers/search';
 
 class Home extends Component {
-  static navigationOptions = () =>{
-    return{
-      header: Header
+  static navigationOptions = () => {
+    return {
+      header: Header,
     }
   }
+
   async componentDidMount() {
+    this.focus = this.props.navigation.addListener('didFocus', () => {
+      StatusBar.setBarStyle('dark-content')
+      StatusBar.setBackgroundColor('white')
+    })
+
     const categoryList = await API.getMovies();
     this.props.dispatch({
       type: 'SET_CATEGORY_LIST',
@@ -33,6 +40,9 @@ class Home extends Component {
       }
     })
   }
+  // componentWillMount() {
+  //   this.focus.remove()
+  // }
   render() {
     return (
       <Fragment>
