@@ -8,7 +8,7 @@ import Empty from '../components/empty';
 import Separator from '../components/vertical-separator';
 import Suggestion from '../components/suggestion';
 import { connect } from 'react-redux';
-import { NavigationActions } from 'react-navigation'
+import { NavigationActions } from 'react-navigation';
 
 function mapStateToProps(state) {
   return {
@@ -18,7 +18,7 @@ function mapStateToProps(state) {
 
 class SuggestionList extends Component {
   keyExtractor = item => item.id.toString()
-  renderEmtpy = () => <Empty />
+  renderEmtpy = () => <Empty/>
   itemSeparator = () => <Separator />
   viewMovie = (item) => {
     this.props.dispatch({

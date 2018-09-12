@@ -8,7 +8,7 @@ import Separator from '../../sections/components/horizontal-separator';
 import Category from '../components/category';
 import Layout from '../components/category-list-layout';
 import { connect } from 'react-redux';
-import { NavigationActions } from 'react-navigation'
+import { NavigationActions } from 'react-navigation';
 
 function mapStateToProps(state) {
   return {
@@ -18,19 +18,19 @@ function mapStateToProps(state) {
 
 class CategoryList extends Component {
   keyExtractor = item => item.id.toString()
-  renderEmtpy = () => <Empty />
+  renderEmtpy = () => <Empty/>
   itemSeparator = () => <Separator />
   viewCategory = (item) => {
     this.props.dispatch(
       NavigationActions.navigate({
         routeName: 'Category',
         params: {
-          genre: item.genres[0],
+          genre: item.genres[0]
         }
       })
     )
   }
-  renderItem = ({ item }) => {
+  renderItem = ({item}) => {
     return (
       <Category
         {...item}
@@ -42,7 +42,7 @@ class CategoryList extends Component {
     return (
       <Layout
         title="Categorias"
-      >
+        >
         <FlatList
           horizontal
           keyExtractor={this.keyExtractor}

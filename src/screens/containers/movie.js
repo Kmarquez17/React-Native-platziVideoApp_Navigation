@@ -14,11 +14,11 @@ class Movie extends Component {
     opacity: new Animated.Value(0),
   }
   static navigationOptions = ({ navigation }) => {
-    return{
+    return {
       header: (
         <Header>
           <Close
-            onPress={() => navigation.goBack()}
+            onPress={()=> { navigation.goBack() }}
           />
         </Header>
       )
@@ -50,8 +50,9 @@ class Movie extends Component {
         }}
       >
         <MovieLayout>
+
           <Player />
-          <Details {...this.props.movie} />
+          <Details {...this.props.movie}/>
         </MovieLayout>
       </Animated.View>
     )

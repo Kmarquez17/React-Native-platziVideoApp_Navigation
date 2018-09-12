@@ -1,40 +1,28 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './store';
 
 import Loading from './src/sections/components/loading';
-// import AppLayout from './src/app'
-import AppNavigatorWithState from './src/app-navigator-with-state'
-
-// console.disableYellowBox = true
-class App extends Component {
-  // state = {
-  //   suggestionList: [],
-  //   CategoryList: [],
-  // }
+import AppLayout from './src/app';
+import AppNavigatorWithState from './src/app-navigator-with-state';
+type Props = {};
+export default class App extends Component<Props> {
   render() {
-    console.disableYellowBox = true
+    console.disableYellowBox = true;
     return (
       <Provider
         store={store}
       >
         <PersistGate
-          loading={<Loading/>}
+          loading={<Loading />}
           persistor={persistor}
         >
-        {/* <AppLayout/>           */}
-        <AppNavigatorWithState/>
+          <AppNavigatorWithState />
         </PersistGate>
       </Provider>
-
     );
   }
 }
 
-export default App
+

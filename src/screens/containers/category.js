@@ -8,7 +8,7 @@ import Empty from '../../videos/components/empty';
 import Separator from '../../videos/components/vertical-separator';
 import Suggestion from '../../videos/components/suggestion';
 import { connect } from 'react-redux';
-import { NavigationActions } from 'react-navigation'
+import { NavigationActions } from 'react-navigation';
 
 function mapStateToProps(state) {
   return {
@@ -18,7 +18,7 @@ function mapStateToProps(state) {
 
 class Category extends Component {
   keyExtractor = item => item.id.toString()
-  renderEmtpy = () => <Empty />
+  renderEmtpy = () => <Empty text="No hay sugerencias :(" />
   itemSeparator = () => <Separator />
   viewMovie = (item) => {
     this.props.dispatch({
@@ -45,7 +45,7 @@ class Category extends Component {
 
     return (
       <Layout
-        title={`${this.props.navigation.getParam('genre','Categoria')}`}
+        title={`${this.props.navigation.getParam('genre', 'Categoria')}`}
         >
         <FlatList
           keyExtractor={this.keyExtractor}

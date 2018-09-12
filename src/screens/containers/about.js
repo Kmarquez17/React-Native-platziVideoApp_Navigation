@@ -6,13 +6,14 @@ import {
   Image,
   StatusBar
 } from 'react-native';
-import Icon from '../../sections/components/Icon';
+import Icon from '../../sections/components/icon';
 
 class About extends Component {
   static navigationOptions = () => {
     return {
       title: 'Sobre esta app',
-      tabBarIcon: <Icon icon="🤓" />
+      tabBarIcon: <Icon icon="🤓" />,
+      drawerIcon: <Icon icon="🤓" />
     }
   }
   componentDidMount() {
@@ -21,9 +22,9 @@ class About extends Component {
       StatusBar.setBackgroundColor('#022c43');
     });
   }
-  // componentWillUnmount() {
-  //   this.focus.remove();
-  // }
+  componentWillUnmount() {
+    this.focus.remove();
+  }
   render() {
     return (
       <View style={styles.container}>

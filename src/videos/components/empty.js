@@ -9,8 +9,7 @@ import {
 function Empty(props) {
   return (
     <View style={styles.container}>
-      {/* <Text style={styles.text}>{props.text}</Text> */}
-      <ActivityIndicator size="large" color="#4c4c4c" />
+      <ActivityIndicator/>
     </View>
   )
 }

@@ -1,10 +1,16 @@
-import { combineReducers } from 'redux'
-import navigation from './navigation'
-import videos from './videos'
+import {
+  combineReducers
+} from 'redux';
+
+import navigation from './navigation';
+import videos from './videos';
+import user from './user';
 
 const reducer = combineReducers({
-    videos,
-    navigation,
+  videos,
+  navigation,
+  user,
 })
 
-export default reducer
+
+export default reducer;

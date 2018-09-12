@@ -1,16 +1,14 @@
-import React from 'react'
+import React from 'react';
 
 import {
-    View,
-    Text
-} from 'react-native'
+  View,
+  Text
+} from 'react-native';
 
-function Icon(props){
-    return(
-        <View>
-            <Text>{props.icon}</Text>
-        </View>
-    )
+function Icon(props) {
+  return (
+    <Text>{props.icon}</Text>
+  )
 }
 
 export default Icon
